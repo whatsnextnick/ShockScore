@@ -2,7 +2,8 @@
 
 [build]
   # Build command for the React frontend
-  command = "cd frontend && npm install && npm run build"
+  # Install function dependencies first, then build frontend
+  command = "npm --prefix netlify/functions install && cd frontend && npm install && npm run build"
 
   # Publish directory (the built frontend)
   publish = "frontend/build"
