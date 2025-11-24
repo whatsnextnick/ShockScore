@@ -1,0 +1,8 @@
+.analytics-page {
+  min-height: 60vh;
+}
+
+.placeholder-text {
+  color: var(--text-secondary);
+  font-style: italic;
+}

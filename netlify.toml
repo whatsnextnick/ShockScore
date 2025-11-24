@@ -1,0 +1,58 @@
+# Netlify Configuration for Shock Score
+
+[build]
+  # Build command for the React frontend
+  command = "cd frontend && npm install && npm run build"
+
+  # Publish directory (the built frontend)
+  publish = "frontend/build"
+
+  # Functions directory for serverless backend
+  functions = "netlify/functions"
+
+[build.environment]
+  # Node version
+  NODE_VERSION = "18"
+
+  # Python version for FER engine
+  PYTHON_VERSION = "3.11"
+
+# Redirect API calls to Netlify Functions
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# SPA routing - redirect all routes to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
+
+# File upload size limit (important for video uploads)
+[functions]
+  # 50MB limit for functions
+  included_files = ["netlify/functions/**"]
+
+[dev]
+  # Local development settings
+  command = "cd frontend && npm start"
+  targetPort = 3000
+  port = 8888
+  publish = "frontend/build"
+  functions = "netlify/functions"

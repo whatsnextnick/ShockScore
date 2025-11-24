@@ -1,0 +1,25 @@
+# Core Computer Vision & Deep Learning
+opencv-python>=4.8.0
+opencv-contrib-python>=4.8.0
+
+# Facial Recognition & Emotion Detection
+deepface==0.0.92
+tensorflow==2.16.1
+
+# Face Detection Models (DeepFace backends)
+mtcnn==0.1.1
+retina-face==0.0.13
+
+# Image Processing
+pillow>=10.0.0
+numpy>=1.26.0
+
+# Data Handling & Analysis
+pandas>=2.0.0
+
+# API & Streaming (for future integration)
+flask==3.0.0
+flask-cors==4.0.0
+
+# Utilities
+python-dotenv==1.0.0

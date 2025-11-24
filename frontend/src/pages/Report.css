@@ -1,0 +1,133 @@
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #333;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.metric-card.highlight {
+  border-color: var(--accent-red);
+  background: linear-gradient(135deg, #2a1a1a 0%, #3a2a2a 100%);
+}
+
+.metric-label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.metric-value.large {
+  font-size: 3rem;
+  color: var(--accent-red);
+}
+
+.metric-subtitle {
+  color: var(--success);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.chart-subtitle {
+  color: var(--text-secondary);
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.two-column-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.moments-list, .scares-list {
+  margin-top: 1rem;
+}
+
+.moment-item, .scare-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--bg-tertiary);
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.moment-rank {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-red);
+  width: 40px;
+}
+
+.scare-icon {
+  font-size: 1.5rem;
+}
+
+.moment-time, .scare-time {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.moment-score, .scare-intensity {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.insights-card {
+  background: linear-gradient(135deg, #1a2a1a 0%, #2a3a2a 100%);
+  border-color: var(--success);
+}
+
+.insights-list {
+  list-style: none;
+  padding: 0;
+}
+
+.insights-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #333;
+  line-height: 1.6;
+}
+
+.insights-list li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .report-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .two-column-grid {
+    grid-template-columns: 1fr;
+  }
+}
