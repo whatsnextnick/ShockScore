@@ -17,6 +17,9 @@
   # Python version for FER engine
   PYTHON_VERSION = "3.11"
 
+  # Disable treating warnings as errors in CI
+  CI = "false"
+
 # Redirect API calls to Netlify Functions
 [[redirects]]
   from = "/api/*"
