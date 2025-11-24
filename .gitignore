@@ -28,6 +28,9 @@ env/
 
 # Output files
 *.json
+!package.json
+!package-lock.json
+!tsconfig.json
 !requirements.txt
 shock_score_report*.json
 demo_*.json

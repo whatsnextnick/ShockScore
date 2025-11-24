@@ -1,0 +1,9 @@
+{
+  "name": "shock-score-functions",
+  "version": "1.0.0",
+  "description": "Serverless functions for Shock Score API",
+  "main": "index.js",
+  "dependencies": {
+    "parse-multipart-data": "^1.5.0"
+  }
+}
